@@ -3,11 +3,7 @@
  */
 package za.co.mtn.ti.notifier;
 
-import com.example.smslistener.R;
-
 import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +12,8 @@ import android.support.v4.app.NotificationCompat;
 import android.telephony.SmsMessage;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.example.smslistener.R;
 
 /**
  * @author yusuf
@@ -49,20 +47,28 @@ public class SMSReceiver extends BroadcastReceiver {
                 if (messages.length > -1) {
                     Log.i(TAG, "Message recieved: " + messages[0].getMessageBody());
                     Toast.makeText(context, messages[0].getMessageBody(), Toast.LENGTH_SHORT).show();
-                    notify(context, messages[0].getMessageBody());
+                    
+                    try {
+                    	 SMSNotification smsnotification = new SMSNotification( messages[0].getMessageBody());
+                         notify(context,smsnotification);
+					} catch (Exception e) {
+						Log.e(TAG,"SMS received cannot be parsed correctly!");
+						e.printStackTrace();
+					}
+                   
                 }
             }
         }
 	}
 	
-	public void notify(Context context, String message){
+	public void notify(Context context, SMSNotification sms){
 		NotificationCompat.Builder mBuilder =
 		        new NotificationCompat.Builder(context)
-		        .setSmallIcon(R.drawable.ic_launcher)
-		        .setContentTitle("Zone Discount")
-		        .setContentText(message);
+		        .setSmallIcon(R.drawable.mtn_logo)
+		        .setContentTitle(sms.getHeading())
+		        .setContentText(sms.getMessage());
 		// Creates an explicit intent for an Activity in your app
-		Intent resultIntent = new Intent(context, MainActivity.class);
+		//Intent resultIntent = new Intent(context, MainActivity.class);
 		
 		//Requires SDK 16 -- Removed
 		/*
@@ -84,7 +90,7 @@ public class SMSReceiver extends BroadcastReceiver {
 		*/
 		NotificationManager mNotificationManager =
 		    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-		int mId = 1;
+		int mId = sms.getId();
 		// mId allows you to update the notification later on.
 		mNotificationManager.notify(mId, mBuilder.build());
 		
