@@ -1,0 +1,4 @@
+#Fri Oct 11 20:57:15 SAST 2019
+base.0=/Users/yusuf/Documents/OneDrive - MTN Group/Development/MTNNotifier/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
