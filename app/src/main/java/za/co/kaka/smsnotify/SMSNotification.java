@@ -1,4 +1,4 @@
-package za.co.mtn.ti.notifier;
+package za.co.kaka.smsnotify;
 
 public class SMSNotification {
     private String heading;

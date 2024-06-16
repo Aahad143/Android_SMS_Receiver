@@ -1,7 +1,7 @@
 /**
  *
  */
-package za.co.mtn.ti.notifier;
+package za.co.kaka.smsnotify;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -74,7 +74,7 @@ public class SMSReceiver extends BroadcastReceiver {
 
     public void notify(Context context, SMSNotification sms, NotificationChannel channel){
         Notification.Builder mBuilder = new Notification.Builder(context , nChannel.getId())
-                .setSmallIcon(R.drawable.mtn_logo)
+                .setSmallIcon(R.drawable.ic_sms_notifier)
                 .setContentTitle(sms.getHeading())
                 .setContentText(sms.getMessage())
                 //.setPriority(Notification.PRIORITY_DEFAULT)

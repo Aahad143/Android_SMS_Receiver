@@ -1,4 +1,4 @@
-package za.co.mtn.ti.notifier;
+package za.co.kaka.smsnotify;
 
 import com.example.smslistener.R;
 
