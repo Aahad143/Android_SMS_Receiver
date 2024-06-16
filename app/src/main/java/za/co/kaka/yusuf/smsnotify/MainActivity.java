@@ -1,4 +1,4 @@
-package za.co.kaka.smsnotify;
+package za.co.kaka.yusuf.smsnotify;
 
 import com.example.smslistener.R;
 

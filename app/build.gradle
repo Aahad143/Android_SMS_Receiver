@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
 
     defaultConfig {
-        applicationId "com.example.smslistener"
+        applicationId "za.co.kaka.yusuf.smsnotify"
         minSdk 28
         targetSdkVersion 34
     }

@@ -1,7 +1,7 @@
 /**
  *
  */
-package za.co.kaka.smsnotify;
+package za.co.kaka.yusuf.smsnotify;
 
 import android.app.Notification;
 import android.app.NotificationChannel;

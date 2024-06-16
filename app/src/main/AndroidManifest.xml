@@ -13,7 +13,7 @@
         android:icon="@drawable/ic_sms_notifier"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <receiver android:name="za.co.kaka.smsnotify.SMSReceiver"
+        <receiver android:name="za.co.kaka.yusuf.smsnotify.SMSReceiver"
             android:exported="true">
             <intent-filter android:priority="10" >
                 <action android:name="android.intent.action.DATA_SMS_RECEIVED" />
@@ -28,7 +28,7 @@
             android:label="@string/title_activity_notification" >
         </activity-->
         <activity
-            android:name="za.co.kaka.smsnotify.MainActivity"
+            android:name="za.co.kaka.yusuf.smsnotify.MainActivity"
             android:exported="true"
             android:label="@string/title_activity_main" >
             <intent-filter>
